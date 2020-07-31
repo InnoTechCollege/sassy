@@ -1,0 +1,55 @@
+// THESE LINES WILL GRAB THE CODE FROM THE _variables AND _mixins FILES AND PASTE IT HERE
+@import '_variables';
+@import '_mixins';
+
+
+// THIS IS WHERE OUR NESTING BEGINS, WE START WITH THE OUTER MOST DIV BY ID AND MOVE IN
+#grid-container {
+
+    // JUST NORMAL CSS
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+
+    // OUR FIRST NESTED RULE WILL FIND ALL h1 TAGS INSIDE OF #grid-container
+    h1 {
+
+        // THIS SHOWS THE USE OF A VARIABLE, $font-color WILL BE REPLACED WITH THE VALUE of $font-color WHICH CAN BE FOUND IN _variables.scss
+        color: $font-color;
+
+        // A NESTED PSEUDO SELECTOR, WILL CREATE #grid-container h1:hover
+        &:hover {
+            // A CALL TO THE animate-font MIXIN, PASSING 4em FOR THE font-size AND 2s FOR THE animation-duration
+            // THIS MIXIN CAN BE FOUND IN THE _mixins.scss
+            @include animate-font(4em, 2s);
+        }
+    }
+
+    // OUR NEXT NESTED RULE, NOTICE HOW THE CSS NESTING MATCHES THE HTML NESTING
+    .card-container {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+
+        // ANOTHER PSEUDO HOVER, THIS TURNS INTO #grid-container .card-container:hover
+        &:hover {
+            // CALLING ANOTHER MIXING ON HOVER, WILL APPLY THE CSS FOUND IN THE animate-elevation MIXIN IN _mixins.scss
+            @include animate-elevation();
+        }
+
+        h3 {
+            color: $font-color;
+
+            &:hover {
+                @include animate-font(2em, 0.25s);
+            }
+        }
+
+        p {
+            color: $font-color2;
+        }
+    }
+}
+

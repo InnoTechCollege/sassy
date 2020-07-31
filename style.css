@@ -1,0 +1,55 @@
+#grid-container {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#grid-container h1 {
+  color: blue;
+}
+
+#grid-container h1:hover {
+  font-size: 3em;
+  font-weight: bold;
+  color: gold;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+#grid-container .card-container {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#grid-container .card-container:hover {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-box-shadow: 5px 5px 7px grey;
+          box-shadow: 5px 5px 7px grey;
+}
+
+#grid-container .card-container h3 {
+  color: blue;
+}
+
+#grid-container .card-container h3:hover {
+  font-size: 1em;
+  font-weight: bold;
+  color: gold;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+#grid-container .card-container p {
+  color: purple;
+}
+/*# sourceMappingURL=style.css.map */
